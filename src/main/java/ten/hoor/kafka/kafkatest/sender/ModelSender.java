@@ -1,8 +1,6 @@
 package ten.hoor.kafka.kafkatest.sender;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
@@ -18,13 +16,13 @@ public class ModelSender {
     @Autowired
     private KafkaTemplate<String, byte[]> kafkaTemplate;
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void act() throws InterruptedException {
-        while(true) {
-            sendMessage("Hello world as proto!");
-            Thread.sleep(2000);
-        }
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void act() throws InterruptedException {
+//        while(true) {
+//            sendMessage("Hello world as proto!");
+//            Thread.sleep(5000);
+//        }
+//    }
 
     public void sendMessage(String message) {
         MessageOuterClass.Message result = MessageOuterClass.Message.newBuilder()
