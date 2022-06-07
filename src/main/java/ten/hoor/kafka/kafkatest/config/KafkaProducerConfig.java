@@ -39,6 +39,8 @@ public class KafkaProducerConfig {
         return new KafkaTemplate<>(stringProducerFactory());
     }
 
+    // We werken met de ByteArraySerializer klasse om Proto zo simpel mogelijk te gebruiken.
+    // Anders moeten we schema servers gaan hosten etc. TODO uitzoeken wat dat is?
     @Bean
     public ProducerFactory<String, byte[]> protoProducerFactory() {
         Map<String, Object> configProps = new HashMap<>();

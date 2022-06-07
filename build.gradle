@@ -23,6 +23,11 @@ dependencies {
 
     implementation 'com.google.protobuf:protobuf-java:3.20.1'
 
+    // Nodig om Cassandra te testen
+    testImplementation "org.testcontainers:testcontainers:1.17.2"
+    testImplementation "org.testcontainers:junit-jupiter:1.17.2"
+    testImplementation "org.testcontainers:cassandra:1.17.2"
+
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
